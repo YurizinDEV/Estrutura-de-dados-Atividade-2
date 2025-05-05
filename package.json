@@ -1,0 +1,36 @@
+{
+  "name": "estrutura-de-dados-atividade-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx watch src/main.ts",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YurizinDEV/Estrutura-de-dados-Atividade-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YurizinDEV/Estrutura-de-dados-Atividade-1/issues"
+  },
+  "homepage": "https://github.com/YurizinDEV/Estrutura-de-dados-Atividade-1#readme",
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "tsx": "^4.19.3"
+  }
+}
