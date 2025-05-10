@@ -35,7 +35,7 @@ export class ArrayDeque<T> {
         if (this.estaCheio()) throw new Error("Deque cheio!");
 
         this.fim = this.incrementar(this.fim);
-        this.arr[this.fim] = item;
+        this.arr[this.fim-1] = item;
     }
 
     removerPrimeiro(): T | undefined {
@@ -54,9 +54,9 @@ export class ArrayDeque<T> {
     removerUltimo(): T | undefined {
         if (this.estaVazio()) throw new Error("Deque cheio!");
 
+        this.fim = this.decrementar(this.fim);
         const val = this.arr[this.fim];
         this.arr[this.fim] = undefined;
-        this.fim = this.decrementar(this.fim);
         return val;
     }
 
