@@ -6,7 +6,7 @@ export class ArrayDeque<T> {
     fim: number;
     arr: (T | undefined)[];
 
-    constructor(capacidade = 15) {
+    constructor(capacidade: number) {
         this.inicio = 0;
         this.fim = 0;
         this.arr = new Array(capacidade + 1).fill(undefined);
@@ -27,19 +27,23 @@ export class ArrayDeque<T> {
     adicionarPrimeiro(item: T): void {
         if (this.estaCheio()) throw new Error("Deque cheio!");
 
-        this.inicio = this.decrementar(this.inicio);
         this.arr[this.inicio] = item;
+        this.inicio = this.decrementar(this.inicio);
     }
 
     adicionarUltimo(item: T): void {
         if (this.estaCheio()) throw new Error("Deque cheio!");
 
-        this.arr[this.fim] = item;
         this.fim = this.incrementar(this.fim);
+        this.arr[this.fim] = item;
     }
 
     removerPrimeiro(): T | undefined {
         if (this.estaVazio()) throw new Error("Deque Vazio!");
+
+        if (this.capacidade() == this.arr.length - 1) {
+            this.inicio = this.incrementar(this.inicio)
+        }
 
         const val = this.arr[this.inicio];
         this.arr[this.inicio] = undefined;
@@ -50,9 +54,9 @@ export class ArrayDeque<T> {
     removerUltimo(): T | undefined {
         if (this.estaVazio()) throw new Error("Deque cheio!");
 
-        this.fim = this.decrementar(this.fim);
         const val = this.arr[this.fim];
         this.arr[this.fim] = undefined;
+        this.fim = this.decrementar(this.fim);
         return val;
     }
 
